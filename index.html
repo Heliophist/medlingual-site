@@ -36,6 +36,10 @@
         }
         section {
             padding: 20px;
+            display: none;
+        }
+        #home {
+            display: block;
         }
         footer {
             text-align: right;
@@ -47,6 +51,18 @@
             width: 100%;
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
 
@@ -56,22 +72,42 @@
 </header>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#problem">The Problem</a>
-    <a href="#app">App</a>
-    <a href="#activities">Activities</a>
-    <a href="#events">Events</a>
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact</a>
+    <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
+    <a href="javascript:void(0);" onclick="showSection('problem')">The Problem</a>
+    <a href="javascript:void(0);" onclick="showSection('app')">App</a>
+    <a href="javascript:void(0);" onclick="showSection('activities')">Activities</a>
+    <a href="javascript:void(0);" onclick="showSection('events')">Events</a>
+    <a href="javascript:void(0);" onclick="showSection('about')">About Us</a>
+    <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
 </nav>
 
 <section id="home">
     <h2>Welcome to MedLingual</h2>
-    <p>MedLingual is a mobile app I created to help non-English speakers understand their over-the-counter (OTC) medications. In the U.S., especially in my district (CA-14) where over 50% of households speak a language other than English, language barriers can make medication labels hard to understand, which adds risks to their health. MedLingual allows users to choose from English, Spanish, Chinese, Tagalog, or Hindi, then take or upload a picture of their medication. The app uses AI to identify the medication and retrieves important details like usage and warnings from the OpenFDA database, translating it into the user’s language.     MedLingual ensures non-English speakers can better understand and safely use their OTC medications.</p>
+    <p>MedLingual is a mobile app I created to help non-English speakers understand their over-the-counter (OTC) medications.</p>
+    <p>In the U.S., especially in my district where over 50% of households speak a language other than English, language barriers can make medication labels hard to understand, which adds risks to their health.</p>
+    <p>MedLingual allows users to choose from English, Spanish, Chinese, Tagalog, or Hindi, then take or upload a picture of their medication. The app uses AI to identify the medication and retrieves important details like usage and warnings from the OpenFDA database, translating it into the user’s language.</p>
+    <p>MedLingual ensures non-English speakers can better understand and safely use their OTC medications.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or feedback, feel free to reach out to us!</p>
+    <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
 </section>
 
 <footer>
-    <center>2024 Medlingual App, Alex Z.</center>
+    2024 Medlingual.app
 </footer>
 
 </body>
