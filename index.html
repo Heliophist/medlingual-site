@@ -2,67 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedLingual</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 24px;
-        }
-        nav {
-            background-color: #333;
-            overflow: hidden;
-        }
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-        section {
-            padding: 20px;
-            display: none;
-        }
-        #home {
-            display: block;
-        }
-        footer {
-            text-align: right;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-    <script>
-        function showSection(sectionId) {
-            // Hide all sections
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
-                section.style.display = 'none';
-            });
-            
-            // Show the selected section
-            document.getElementById(sectionId).style.display = 'block';
-        }
-    </script>
+    <title>MedLingual - Home</title>
+    <style>/* include your original CSS here */</style>
 </head>
 <body>
 
@@ -72,57 +13,23 @@
 </header>
 
 <nav>
-    <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
-    <a href="javascript:void(0);" onclick="showSection('problem')">The Problem</a>
-    <a href="javascript:void(0);" onclick="showSection('app')">App</a>
-    <a href="javascript:void(0);" onclick="showSection('activities')">Activities</a>
-    <a href="javascript:void(0);" onclick="showSection('events')">Events</a>
-    <a href="javascript:void(0);" onclick="showSection('about')">About Us</a>
-    <a href="javascript:void(0);" onclick="showSection('contact')">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="problem.html">The Problem</a>
+    <a href="app.html">App</a>
+    <a href="activities.html">Activities</a>
+    <a href="events.html">Events</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy Policy</a>
 </nav>
 
-<section id="home">
+<section>
     <h2>Welcome to MedLingual</h2>
-    <p>MedLingual is a mobile app I created to help non-English speakers understand their over-the-counter (OTC) medications.</p>
-    <p>In the U.S., especially in my district where over 50% of households speak a language other than English, language barriers can make medication labels hard to understand, which adds risks to their health.</p>
-    <p>MedLingual allows users to choose from English, Spanish, Chinese, Tagalog, or Hindi, then take or upload a picture of their medication. The app uses AI to identify the medication and retrieves important details like usage and warnings from the OpenFDA database, translating it into the user’s language.</p>
-    <p>MedLingual ensures non-English speakers can better understand and safely use their OTC medications.</p>
-</section>
-
-<section id="problem">
-    <h2>The Problem</h2>
-    <p>In the U.S., especially in my district (CA-14) where over 50% of households speak a language other than English, language barriers can make medication labels hard to understand, which increases health risks. </p>  
-</section>
-
-<section id="app">
-    <h2>App</h2>
-    <p>My app, MedLingual, allows users to choose from English, Spanish, Chinese, Tagalog, or Hindi—the five most spoken languages in my district—and then take or upload a picture of their medication. The app uses AI to identify the medication and retrieves important details such as usage and warnings from the OpenFDA database, translating them into the user’s language. MedLingual ensures that non-English speakers can better understand and safely use their OTC medications.  </p>  
-    <p>I was inspired to create the MedLingual app after noticing how many people in my community, including family and friends, struggle to understand over-the-counter (OTC) medications due to language barriers. In the U.S., where so many people speak languages other than English at home, it can be risky when they don’t fully understand the usage or warnings on medication labels. I wanted to make this critical health information more accessible and easier to understand for non-English speakers, so they can safely use their medications without confusion or guesswork.</p>
-    <p>I also wanted to help my mom with this app. She is good at English, but as she is getting older, her vision is worsening which makes it hard for her to read the small fonts on medication bottles. That’s why I added a feature to increase the font size for better readability. This is also why my app includes an English version. I’m really happy that my app helps my mom, and I hope it can help many other elderly people who are good at English but have difficulty reading small text due to vision issues.</p>
-</section>
-
-<section id="activities">
-    <h2>Activities</h2>
-    <p>I’ve been planning for the 2.0 version of MedLingual, with several big improvements. First of all, I hope to add more language support; I want to expand the app to include more languages like Vietnamese and Korean, as MedLingual is all about helping non-English speakers understand their medications. The more languages we support, the more people we can help. Secondly, I want to add more functions to the app; I will code a reminder feature so users can set alarms to take their medication based on the instructions. I would also include a favorites list, allowing users to save frequently-used medications so they don’t have to scan the same ones again and again. Lastly, I will implement an on-device database to store medication info locally, making the app faster, reducing costs by avoiding constant online data retrieval, and ensuring complete privacy for users. Additionally, I want to further improve the app’s UI to make it even easier to use.  </p>  
-</section>
-
-<section id="events">
-    <h2>Events</h2>
-    <p>We are organizing some events with local communities to get more people download and use this app. Hope it help people better understand and safely use their OTC medications. </p>  
-</section>
-    
-<section id="about">
-    <h2>About</h2>
-    <p>Hey! I'm Alex Z, a 10th grader who’s really into science, tech, history, and geography. I love coding and digging into AI applications. I’m the co-founder and co-president of my high school's AI & Cybersecurity Club, and I also run a weekly AI newsletter for our school. Besides that, I play the clarinet and saxophone in the school band, and I’m on the varsity teams for water polo and tennis. I’m also big on giving back, so I do a lot of volunteer work, especially with local libraries and community events.</p>
-</section>
-    
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>If you have any questions or feedback, feel free to email to medlingualapp@gmail.com</p>  
+    <p>MedLingual is a mobile app I created to help non-English speakers understand their over-the-counter (OTC) medications...</p>
 </section>
 
 <footer style="text-align: center;">
-    2024 Medlingual App by Alex Z.
+    2024 MedLingual App by Alex Z.
 </footer>
 
 </body>
