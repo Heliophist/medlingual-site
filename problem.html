@@ -16,7 +16,7 @@
         flex-direction: column;
       }
       header {
-        background-color: #4caf50;
+        background-color: #2b61e8;
         color: white;
         padding: 15px;
         text-align: center;
@@ -40,6 +40,10 @@
         background-color: #ddd;
         color: black;
       }
+      nav a.active {
+        background-color: #666;
+        color: white;
+      }
       section {
         padding: 20px;
         flex: 1;
@@ -47,7 +51,7 @@
       footer {
         text-align: center;
         padding: 10px;
-        background-color: #4caf50;
+        background-color: #2b61e8;
         color: white;
         margin-top: auto;
       }
@@ -65,7 +69,7 @@
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="problem.html">The Problem</a>
+      <a href="problem.html" class="active">The Problem</a>
       <a href="app.html">App</a>
       <!--<a href="activities.html">Activities</a>-->
       <!--<a href="events.html">Events</a>-->
@@ -89,7 +93,7 @@
         Labels also come with tiny text, technical terms, and missing
         translations. Even English speakers sometimes misread them. But for
         non-English speakers or people with low vision, the challenge is much
-        worse—and too often overlooked.
+        worse, and too often overlooked.
       </p>
 
       <p>

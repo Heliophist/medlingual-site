@@ -16,7 +16,7 @@
         flex-direction: column;
       }
       header {
-        background-color: #4caf50;
+        background-color: #2b61e8;
         color: white;
         padding: 15px;
         text-align: center;
@@ -40,6 +40,10 @@
         background-color: #ddd;
         color: black;
       }
+      nav a.active {
+        background-color: #666;
+        color: white;
+      }
       section {
         padding: 20px;
         flex: 1;
@@ -51,7 +55,7 @@
       footer {
         text-align: center;
         padding: 10px;
-        background-color: #4caf50;
+        background-color: #2b61e8;
         color: white;
         margin-top: auto;
       }
@@ -63,20 +67,20 @@
         font-size: 14px;
       }
       .language-item {
-        background-color: #e8f5e8;
+        background-color: #e8f0ff;
         padding: 6px 10px;
         border-radius: 15px;
         text-align: center;
-        border: 1px solid #4caf50;
+        border: 1px solid #2b61e8;
       }
       .language-dropdown {
         cursor: pointer;
-        color: #4caf50;
+        color: #2b61e8;
         text-decoration: underline;
         display: inline-block;
       }
       .language-dropdown:hover {
-        color: #45a049;
+        color: #1f4ba6;
       }
       .language-content {
         max-height: 0;
@@ -108,7 +112,7 @@
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="problem.html">The Problem</a>
       <a href="app.html">App</a>
       <!--<a href="activities.html">Activities</a>-->

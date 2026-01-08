@@ -16,7 +16,7 @@
         flex-direction: column;
       }
       header {
-        background-color: #4caf50;
+        background-color: #2b61e8;
         color: white;
         padding: 15px;
         text-align: center;
@@ -40,6 +40,10 @@
         background-color: #ddd;
         color: black;
       }
+      nav a.active {
+        background-color: #666;
+        color: white;
+      }
       section {
         padding: 20px;
         flex: 1;
@@ -47,7 +51,7 @@
       footer {
         text-align: center;
         padding: 10px;
-        background-color: #4caf50;
+        background-color: #2b61e8;
         color: white;
         margin-top: auto;
       }
@@ -104,6 +108,29 @@
       .close:hover {
         opacity: 0.7;
       }
+      .nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        color: black;
+        border: none;
+        font-size: 24px;
+        padding: 10px 15px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 1002;
+        transition: background-color 0.3s ease;
+      }
+      .nav-arrow:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+      .nav-arrow.prev {
+        left: 20px;
+      }
+      .nav-arrow.next {
+        right: 20px;
+      }
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -120,20 +147,20 @@
         font-size: 14px;
       }
       .language-item {
-        background-color: #e8f5e8;
+        background-color: #e8f0ff;
         padding: 6px 10px;
         border-radius: 15px;
         text-align: center;
-        border: 1px solid #4caf50;
+        border: 1px solid #2b61e8;
       }
       .language-dropdown {
         cursor: pointer;
-        color: #4caf50;
+        color: #2b61e8;
         text-decoration: underline;
         display: inline-block;
       }
       .language-dropdown:hover {
-        color: #45a049;
+        color: #1f4ba6;
       }
       .language-content {
         max-height: 0;
@@ -167,7 +194,7 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="problem.html">The Problem</a>
-      <a href="app.html">App</a>
+      <a href="app.html" class="active">App</a>
       <!--<a href="activities.html">Activities</a>-->
       <!--<a href="events.html">Events</a>-->
       <a href="about.html">About Us</a>
@@ -199,7 +226,7 @@
 
       <div class="app-gallery">
         <img
-          src="App Images/Home_Page.jpg"
+          src="App Images/Home_Page_Edited.png"
           alt="App Home Page"
           onclick="openModal(this)"
         />
@@ -228,17 +255,54 @@
 
     <div id="imageModal" class="modal" onclick="closeModal()">
       <span class="close" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImage" />
+      <button
+        class="nav-arrow prev"
+        onclick="event.stopPropagation(); navigateImage(-1)"
+      >
+        &#8249;
+      </button>
+      <button
+        class="nav-arrow next"
+        onclick="event.stopPropagation(); navigateImage(1)"
+      >
+        &#8250;
+      </button>
+      <img
+        class="modal-content"
+        id="modalImage"
+        onclick="event.stopPropagation()"
+      />
     </div>
 
     <script>
+      let currentImageIndex = 0;
+      const images = document.querySelectorAll(".app-gallery img");
+
       function openModal(img) {
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImage");
 
+        // Find the index of the clicked image
+        currentImageIndex = Array.from(images).indexOf(img);
+
         modal.style.display = "block";
         modalImg.src = img.src;
         modalImg.alt = img.alt;
+      }
+
+      function navigateImage(direction) {
+        currentImageIndex += direction;
+
+        // Wrap around to the other end if we go past boundaries
+        if (currentImageIndex >= images.length) {
+          currentImageIndex = 0;
+        } else if (currentImageIndex < 0) {
+          currentImageIndex = images.length - 1;
+        }
+
+        const modalImg = document.getElementById("modalImage");
+        modalImg.src = images[currentImageIndex].src;
+        modalImg.alt = images[currentImageIndex].alt;
       }
 
       function closeModal() {
@@ -246,10 +310,17 @@
         modal.style.display = "none";
       }
 
-      // Close modal when pressing Escape key
+      // Close modal when pressing Escape key, navigate with arrow keys
       document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-          closeModal();
+        const modal = document.getElementById("imageModal");
+        if (modal.style.display === "block") {
+          if (event.key === "Escape") {
+            closeModal();
+          } else if (event.key === "ArrowLeft") {
+            navigateImage(-1);
+          } else if (event.key === "ArrowRight") {
+            navigateImage(1);
+          }
         }
       });
 
